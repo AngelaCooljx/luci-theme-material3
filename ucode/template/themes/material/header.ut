@@ -40,8 +40,7 @@
 <meta name="application-name" content="{{ hostname }} - LuCI">
 <meta name="apple-mobile-web-app-title" content="{{ hostname }} - LuCI">
 <link rel="stylesheet" href="{{ media }}/cascade.css">
-<link rel="icon" href="{{ media }}/logo_48.png" sizes="48x48">
-<link rel="icon" href="{{ media }}/logo.svg" sizes="any">
+<link rel="shortcut icon" href="{{ media }}/favicon.ico">
 {% if (node?.css): %}
 <link rel="stylesheet" href="{{ resource }}/{{ node.css }}">
 {% endif %}
@@ -57,7 +56,6 @@
 	<div class="fill">
 		<div class="container">
 			<span class="showSide"></span>
-			<a id="logo" href="{{ ctx.authsession ? dispatcher.build_url('admin/status/overview') : '#' }}"><img src="{{ media }}/brand.png" alt="OpenWrt"></a>
 			<a class="brand" href="#">{{ hostname }}</a>
 			<span class="status" id="indicators"></span>
 		</div>
@@ -73,7 +71,7 @@
 		<div class="darkMask"></div>
 		<div id="maincontent">
 			<div class="container">
-				{% if (getuid() == 0 && getspnam('root')?.pwdp === '' && ctx.authsession): %}
+				{% if (getuid() == 0 && getspnam('root')?.pwdp === ''): %}
 					<div class="alert-message warning">
 						<h4>{{ _('No password set!') }}</h4>
 						<p>{{ _('There is no password set on this router. Please configure a root password to protect the web interface.') }}</p>
