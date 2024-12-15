@@ -1,5 +1,6 @@
 # luci-theme-material3
-## Preview 👀
+A fork of [LuttyYang/luci-theme-material](https://github.com/LuttyYang/luci-theme-material) with fake MD3 design. Honestly, my code is quite messy..
+
+This project is still a work in progress, just for fun.
+## Preview
 ![Preview 1](imgs/desktop_purple.png)
-![Preview 2](imgs/mobile_purple.png)
-![Preview 3](imgs/mobile-menu_purple.png)
