@@ -1234,7 +1234,6 @@ td>table>tbody>tr>td,
 
 .cbi-tabmenu>li[class~="cbi-tab"] {
 	border-bottom: 2px solid var(--purple-color);
-	);
 }
 
 .cbi-section .cbi-section-remove:nth-of-type(2n),
@@ -2970,6 +2969,42 @@ input[name="nslookup"] {
 		text-align: left;
 	}
 
+	.td,
+	.th {
+		word-break: break-word;
+		overflow-wrap: break-word;
+	}
+
+	.table {
+		display: block;
+		overflow-x: auto;
+		max-width: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	[data-page="admin-network-firewall-rules"] .table,
+	[data-page="admin-network-firewall-forwards"] .table,
+	[data-page="admin-network-firewall-zones"] .table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.main-right {
+		overflow-x: hidden;
+	}
+
+	#maincontent {
+		overflow-x: hidden;
+	}
+
+	.cbi-section {
+		overflow-x: hidden;
+		max-width: 100%;
+	}
+
 	.cbi-value-title,
 	.cbi-value-description,
 	.cbi-value-field,
@@ -3124,32 +3159,24 @@ input[name="nslookup"] {
 	}
 
 	[data-tab-title] {
-		padding: 0 !important;
+		padding: 0 .5rem !important;
 	}
 }
 
 @media screen and (min-width: 600px) {
-
-	.td,
-	.th {
-		word-break: break-word;
-		overflow-wrap: break-word;
+	::-webkit-scrollbar {
+		width: 8px;
 	}
 
-	.table {
-		display: block;
-		overflow-x: auto;
-		max-width: 100%;
-		-webkit-overflow-scrolling: touch;
+	::-webkit-scrollbar,
+	::-webkit-scrollbar-corner {
+		background: transparent;
+		border-radius: 4px;
 	}
 
-	[data-page="admin-network-firewall-rules"] .table,
-	[data-page="admin-network-firewall-forwards"] .table,
-	[data-page="admin-network-firewall-zones"] .table {
-		display: block;
-		overflow-x: auto;
-		white-space: nowrap;
-		max-width: 100%;
+	::-webkit-scrollbar-thumb {
+		background: #9e9e9e;
+		border-radius: 4px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
