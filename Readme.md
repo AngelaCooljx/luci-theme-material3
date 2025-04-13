@@ -27,7 +27,7 @@ This is a personal project based on the LuCI Bootstrap theme, imitating the Mate
 </table>
 
 ## 📝 ToDo
-- [✅] Dark themes
+- [ ！ ] Dark themes
 - [ ] Fix some style issues
 - [ ] Add more color schemes
 - [ ] Improve to be closer to MD3 principles
