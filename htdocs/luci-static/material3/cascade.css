@@ -2839,6 +2839,16 @@
 		mask: url("icons/docker.svg") center/contain no-repeat
 	}
 
+	.nav>li[data-path="admin/modem"]>a::before {
+		-webkit-mask: url("icons/modem.svg") center/contain no-repeat;
+		mask: url("icons/modem.svg") center/contain no-repeat
+	}
+
+	.nav>li[data-path="admin/vpn"]>a::before {
+		-webkit-mask: url("icons/vpn.svg") center/contain no-repeat;
+		mask: url("icons/vpn.svg") center/contain no-repeat
+	}  
+
 	.nav>li[data-path="admin/logout"]>a::before {
 		-webkit-mask: url("icons/logout.svg") center/contain no-repeat;
 		mask: url("icons/logout.svg") center/contain no-repeat
