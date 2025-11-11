@@ -1,0 +1,40 @@
+name: build-packages
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build:
+    name: ${{ matrix.branch }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - x86_64
+        branch:
+          - openwrt-24.10
+          - SNAPSHOT
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          path: ${{ github.event.repository.name }}
+
+      - name: build
+        uses: openwrt/gh-action-sdk@main
+        env:
+          ARCH: ${{ matrix.arch }}-${{ matrix.branch }}
+          PACKAGES: ${{ github.event.repository.name }}
+          NO_REFRESH_CHECK: true
+
+      - name: upload
+        uses: actions/upload-artifact@v5
+        with:
+          name: ${{ matrix.branch }}-packages
+          path: |
+            bin/packages/${{ matrix.arch }}/action/*.ipk
+            bin/packages/${{ matrix.arch }}/action/*.apk
